@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Псевдоэлементы ::before и ::after</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    p::before {
+      content: "✦ ";
+      color: darkblue;
+      font-size: 20px;
+    }
+
+    h1::after,
+    h2::after {
+      content: " ✿";
+      color: darkred;
+      font-size: 18px;
+    }
+
+    .content-box {
+      position: relative;
+      padding: 20px;
+      margin: 30px 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+    .content-box::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #0077cc;
+    }
+
+    .content-box::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Заголовок первого уровня</h1>
+  <h2>Заголовок второго уровня</h2>
+
+  <p>Это первый абзац текста, к которому применён псевдоэлемент ::before.</p>
+  <p>Это второй абзац текста, он также использует псевдоэлемент для добавления символа.</p>
+
+  <div class="content-box">
+    Этот блок имеет декоративные линии сверху и снизу, реализованные через ::before и ::after.
+  </div>
+
+  <div class="content-box">
+    Ещё один блок с тем же визуальным эффектом рамки, но с другим содержанием.
+  </div>
+
+</body>
+</html>
